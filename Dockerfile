@@ -15,4 +15,5 @@ RUN pip install uvicorn
 COPY ./api /app
 COPY ./start.sh /app/
 
+
 CMD [ "/app/start.sh"]
