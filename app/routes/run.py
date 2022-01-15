@@ -28,7 +28,7 @@ for file_str in pipeline_graph_files:
                 "/%s" % pipeline_graph.name,
             )
             async def create(
-                pipeline_inputs,
+                pipeline_inputs: dict,
             ):
                 print("Got run req")
                 return {"result":pipeline_graph.run(pipeline_inputs)}
