@@ -1,0 +1,34 @@
+version: "3.3"
+services:
+  pipeline_api:
+    image: mysticai/pipeline-docker:latest
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      LOG_LEVEL: "debug"
+
+      PYTHONDONTWRITEBYTECODE: 1
+      PYTHONUNBUFFERED: 1
+
+      DATABASE_HOSTNAME: "pipeline_db"
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: "postgres"
+      DATABASE_PASSWORD: "example"
+      DATABASE_NAME: "pipeline"
+      DATABASE_CREATE_TABLES: 1
+      REDIS_URL: "pipeline_redis"
+  pipeline_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+  pipeline_redis:
+    image: "bitnami/redis:latest"
+    container_name: pipeline_redis
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6379:6379
