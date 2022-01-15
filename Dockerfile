@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.8-slim
+FROM --platform=linux/amd64 tiangolo/uvicorn-gunicorn-fastapi:python3.8-slim
 
 WORKDIR /app
 
@@ -11,7 +11,8 @@ ARG INSTALL_DEV=false
 RUN bash -c "if [ $INSTALL_DEV == 'true' ] ; then poetry install ; else poetry install --no-dev ; fi"
 RUN pip install uvicorn
 
-COPY ./api/ /app
-COPY ./start.sh /app/
+#COPY ./app /app
+COPY . /app
 
-CMD [ "/app/start.sh"]
+#CMD [ "/app/start.sh"]
+CMD ["/start-reload.sh"]

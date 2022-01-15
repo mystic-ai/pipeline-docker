@@ -1,7 +1,8 @@
-from core.schemas.request import RequestSchema
+#from app.core.schemas.request import RequestSchema
+from pipeline.schemas.request import RequestGet
 from sqlalchemy import Column, ForeignKey, String, Integer, JSON, DateTime
 
-from database.models import Base
+from app.database.models import Base
 
 import random
 import string
@@ -40,7 +41,7 @@ class ResourceRequest(Base):
         )
 
     def as_schema(self):
-        return RequestSchema.from_orm(self)
+        return RequestGet.from_orm(self)
 
     def as_dict(self):
         return {

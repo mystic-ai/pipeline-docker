@@ -10,7 +10,6 @@ class Settings(BaseSettings):
     DATABASE_PASSWORD: str
     DATABASE_NAME: str
     DATABASE_CREATE_TABLES: int
-    PIPELINE_TOKEN: str
 
     class Config:
         env_file = ".env"
