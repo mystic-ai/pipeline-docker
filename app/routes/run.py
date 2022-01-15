@@ -3,7 +3,7 @@ import json
 
 from fastapi.routing import APIRouter
 
-from core.middlewares.RouteLogger import RouteLogger
+from app.core.middlewares.RouteLogger import RouteLogger
 
 from pipeline.schemas.run import RunGet
 

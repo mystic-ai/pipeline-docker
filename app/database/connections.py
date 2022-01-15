@@ -1,8 +1,8 @@
-from core.config import get_settings
+from app.core.config import get_settings
 import logging
 import os
 import json
-from database.models import Base
+from app.database.models import Base
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
 from sqlalchemy.orm import scoped_session, sessionmaker

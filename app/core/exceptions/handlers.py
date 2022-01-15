@@ -1,4 +1,4 @@
-from services.resource_request import log_request
+from app.services.resource_request import log_request
 from datetime import datetime
 from fastapi.exception_handlers import (
     http_exception_handler,

@@ -8,6 +8,9 @@ authors = ["Paul Hetherington <ph@mystic.ai>"]
 python = "^3.8"
 fastapi = "^0.71.0"
 pipeline-ai = "^0.0.12"
+SQLAlchemy = "^1.4.29"
+SQLAlchemy-Utils = "^0.38.2"
+psycopg2-binary = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
 

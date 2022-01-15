@@ -2,7 +2,10 @@ version: "3.3"
 services:
   pipeline_api:
     image: mysticai/pipeline-docker:latest
+    container_name: pipeline_api
     restart: always
+    ports:
+      - 5010:80
     build:
       context: ./
       dockerfile: Dockerfile
@@ -21,6 +24,7 @@ services:
       REDIS_URL: "pipeline_redis"
   pipeline_db:
     image: postgres
+    container_name: pipeline_db
     restart: always
     environment:
       POSTGRES_PASSWORD: example

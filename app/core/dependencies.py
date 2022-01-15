@@ -1,16 +1,16 @@
-from core.config import get_settings
+from app.core.config import get_settings
 from fastapi.security.http import HTTPBearer
 from fastapi.security.api_key import APIKeyCookie
 from fastapi.params import Depends
 from fastapi import Request
 
-from core.config import Settings
-from core.exceptions.TokenNotProvided import TokenNotProvided
-from core.exceptions.TokenNotFound import TokenNotFound
+from app.core.config import Settings
+from app.core.exceptions.TokenNotProvided import TokenNotProvided
+from app.core.exceptions.TokenNotFound import TokenNotFound
 
 from typing import Optional
 
-from database.connections import database_scoped_session
+from app.database.connections import database_scoped_session
 
 bearer_scheme = HTTPBearer(auto_error=False)
 cookie_schema = APIKeyCookie(name="token")

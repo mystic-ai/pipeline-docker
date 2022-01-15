@@ -1,5 +1,5 @@
-from core.exceptions.handlers import get_validation_error_response
-from services.resource_request import log_request
+from app.core.exceptions.handlers import get_validation_error_response
+from app.services.resource_request import log_request
 from pydantic.error_wrappers import ValidationError
 from typing import Any, Callable
 from fastapi import Request, Response
@@ -8,7 +8,7 @@ from starlette.exceptions import HTTPException
 from datetime import datetime
 
 from starlette.responses import JSONResponse
-from database.connections import database_scoped_session
+from app.database.connections import database_scoped_session
 import traceback
 
 

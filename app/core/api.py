@@ -1,17 +1,17 @@
 import json
 
 from pydantic.error_wrappers import ValidationError
-from core.exceptions.handlers import (
+from app.core.exceptions.handlers import (
     validation_exception_handler,
     http_exception_handler,
 )
 from fastapi.exceptions import HTTPException
-from core.middlewares.RouteLogger import RouteLogger
+from app.core.middlewares.RouteLogger import RouteLogger
 from fastapi.routing import APIRouter
 from fastapi import FastAPI
 import logging
 
-from routes.run import router as run_router
+from app.routes.run import router as run_router
 
 app = FastAPI()
 logger = logging.getLogger("uvicorn")
