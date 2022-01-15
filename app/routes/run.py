@@ -22,7 +22,7 @@ for file_str in pipeline_graph_files:
         pipeline_graph = loads(pipeline_graph_file.read())
         if isinstance(pipeline_graph, Graph):
 
-            expected_inputs = pipeline_graph.inputs
+            #expected_inputs = pipeline_graph.inputs
 
             @router.post(
                 "/%s" % pipeline_graph.name,
