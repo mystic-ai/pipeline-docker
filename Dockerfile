@@ -12,7 +12,7 @@ ARG INSTALL_DEV=false
 RUN bash -c "if [ $INSTALL_DEV == 'true' ] ; then poetry install ; else poetry install --no-dev ; fi"
 RUN pip install uvicorn
 
-COPY ./api /app
+COPY ./api/ /app
 COPY ./start.sh /app/
 
 
