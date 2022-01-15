@@ -18,7 +18,7 @@ router = APIRouter(prefix="/run", route_class=RouteLogger)
 
 pipeline_graph_files = [f for f in listdir("/app/pipelines") if isfile(join("/app/pipelines", f)) and f.endswith(".graph")]
 for file_str in pipeline_graph_files:
-    with open(join("/app/pipelines/", file_str)) as pipeline_graph_file:
+    with open(join("/app/pipelines/", file_str), "rb") as pipeline_graph_file:
         pipeline_graph = loads(pipeline_graph_file.read())
         if isinstance(pipeline_graph, Graph):
             @router.post(
