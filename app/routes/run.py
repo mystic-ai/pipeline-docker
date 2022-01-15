@@ -21,11 +21,14 @@ for file_str in pipeline_graph_files:
     with open(join("/app/pipelines/", file_str), "rb") as pipeline_graph_file:
         pipeline_graph = loads(pipeline_graph_file.read())
         if isinstance(pipeline_graph, Graph):
+
+            expected_inputs = pipeline_graph.inputs
+
             @router.post(
                 "/%s" % pipeline_graph.name,
             )
             async def create(
-                run_data,
+                **pipeline_inputs,
             ):
                 print("Got run req")
-                return {"result":pipeline_graph.run(run_data)}
+                return {"result":pipeline_graph.run(**pipeline_inputs)}
