@@ -11,8 +11,8 @@ ARG INSTALL_DEV=false
 RUN bash -c "if [ $INSTALL_DEV == 'true' ] ; then poetry install ; else poetry install --no-dev ; fi"
 RUN pip install uvicorn
 
-#COPY ./app /app
+RUN mkdir /app/pipelines
+
 COPY . /app
 
-#CMD [ "/app/start.sh"]
 CMD ["/start-reload.sh"]
