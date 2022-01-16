@@ -12,7 +12,7 @@ from fastapi.routing import APIRouter
 
 from app.core.middlewares.RouteLogger import RouteLogger
 
-from pipeline.schemas.run import RunGet
+from pipeline.schemas.run import RunCreate
 from pipeline.objects import Graph
 
 router = APIRouter(prefix="/run", route_class=RouteLogger)
@@ -30,6 +30,6 @@ for file_str in pipeline_graph_files:
     "/" ,
 )
 async def create(
-    run_create_schema: RunGet,
+    run_create_schema: RunCreate,
 ):
     return {"result":pipeline_graphs[run_create_schema.pipeline_id].run(run_create_schema.data)}
