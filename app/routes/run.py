@@ -12,7 +12,7 @@ from fastapi.routing import APIRouter
 
 from app.core.middlewares.RouteLogger import RouteLogger
 
-from pipeline.schemas.run import RunGet
+from pipeline.schemas.run import RunCreate
 from pipeline.objects import Graph
 
 router = APIRouter(prefix="/run", route_class=RouteLogger)
