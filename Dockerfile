@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 tiangolo/uvicorn-gunicorn-fastapi:python3.8-slim
+FROM --platform=linux/amd64 tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim
 
 WORKDIR /app
 
