@@ -10,7 +10,7 @@ from app.core.middlewares.RouteLogger import RouteLogger
 from pipeline.schemas.run import RunCreate
 from pipeline.objects import Graph
 
-router = APIRouter(prefix="/run", route_class=RouteLogger)
+router = APIRouter(prefix="/runs", route_class=RouteLogger)
 
 pipeline_graphs = {}
 
