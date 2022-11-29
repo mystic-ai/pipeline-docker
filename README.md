@@ -4,6 +4,7 @@
 # Table of Contents
 
 - [About](#about)
+- [Routes](#routes)
 
 # About
 
