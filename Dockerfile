@@ -15,6 +15,7 @@ RUN bash -c "if [ $INSTALL_DEV == 'true' ] ; then poetry install ; else poetry i
 RUN pip install uvicorn
 
 RUN mkdir /app/pipelines
+RUN mkdir /app/files
 
 COPY . /app
 
